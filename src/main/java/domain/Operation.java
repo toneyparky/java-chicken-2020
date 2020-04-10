@@ -19,4 +19,16 @@ public enum Operation {
 				.findFirst()
 				.orElseThrow(() -> new IllegalArgumentException("해당되는 번호의 operation이 없습니다."));
 	}
+
+	public boolean isOrder() {
+		return this.equals(ORDER);
+	}
+
+	public boolean isPay() {
+		return this.equals(PAY);
+	}
+
+	public boolean isExit() {
+		return this.equals(EXIT);
+	}
 }

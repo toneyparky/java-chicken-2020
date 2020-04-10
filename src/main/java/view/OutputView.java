@@ -53,4 +53,21 @@ public class OutputView {
 	public static void askOrderAmount() {
 		System.out.println("## 메뉴의 수량을 입력하세요.");
 	}
+
+	public static void printOperations() {
+		String message = String.join("\n",
+				"## 메인화면",
+				"1 - 주문등록",
+				"2 - 결제하기",
+				"3 - 프로그램 종료");
+		System.out.println(message);
+	}
+
+	public static void askOperation() {
+		System.out.println("## 원하는 기능을 선택하세요.");
+	}
+
+	public static void printExitMessage() {
+		System.out.println("Pos기를 종료합니다.");
+	}
 }

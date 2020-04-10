@@ -3,8 +3,6 @@ package domain.table;
 import domain.order.Order;
 import domain.order.Orders;
 
-import java.util.Objects;
-
 public class Table {
 	private final int number;
 	private Orders orders = new Orders();

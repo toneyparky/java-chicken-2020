@@ -1,36 +1,36 @@
 package controller;
 
-import domain.order.Amount;
-import domain.order.Menu;
-import domain.order.MenuRepository;
-import domain.order.Order;
-import domain.table.Table;
+import domain.Operation;
 import domain.table.TableRepository;
 import domain.table.Tables;
 import view.InputView;
 import view.OutputView;
 
-import java.util.List;
-
 public class PosController {
-	public void run() {
-		final Tables tables = new Tables(TableRepository.tables());
+	Tables tables;
 
-		OutputView.printTables(tables.getTables());
-		OutputView.askOrderTable();
-		Table orderingTable = new Table(InputView.inputInteger());
+	public PosController() {
+		this.tables = new Tables(TableRepository.tables());
+	}
 
-		final List<Menu> menus = MenuRepository.menus();
-		OutputView.printMenus(menus);
+	public void operate() {
+		OutputView.printOperations();
+		OutputView.askOperation();
 
-		OutputView.askOrderMenu();
-		Menu orderingMenu = MenuRepository.getByNumber(InputView.inputInteger());
+		Operation operation = Operation.of(InputView.inputInteger());
 
-		OutputView.askOrderAmount();
-		Amount orderingAmount = new Amount(InputView.inputInteger());
+		if (operation.isOrder()) {
+			OrderController orderController = new OrderController();
+			orderController.operate(tables);
+			operate();
+		}
 
-		Order order = new Order(orderingMenu, orderingAmount);
+		if (operation.isPay()) {
+			operate();
+		}
 
-		tables.order(orderingTable, order);
+		if (operation.isExit()) {
+			OutputView.printExitMessage();
+		}
 	}
 }
