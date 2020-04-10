@@ -104,7 +104,15 @@ public class OutputView {
 		}
 	}
 
-	public static void printTotalMoney() {
-		System.out.println("최종 금액은 000원입니다.");
+	public static void printTotalMoney(double totalMoney) {
+		System.out.println(String.format("최종 금액은 %.0f원입니다.", totalMoney));
+	}
+
+	public static void printCurrentPayingTable(Table payingTable) {
+		System.out.println(String.format("## %d번 테이블의 결제를 진행합니다.", payingTable.getNumber()));
+	}
+
+	public static void askPaymentType() {
+		System.out.println("## 신용 카드는 1번, 현금은 2번");
 	}
 }

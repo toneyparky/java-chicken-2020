@@ -1,5 +1,8 @@
 package controller;
 
+import domain.payment.PaymentType;
+import domain.payment.discount.CategoryDiscount;
+import domain.payment.discount.ChickenCategoryDiscount;
 import domain.table.Table;
 import domain.table.Tables;
 import view.InputView;
@@ -18,9 +21,15 @@ public class PayController {
 
 		OutputView.printPayingOrders(payingTable.getOrders());
 
-		// TODO: 2020/04/10 할인 로직
+		CategoryDiscount categoryDiscount = new ChickenCategoryDiscount();
+		double discountedMoney = categoryDiscount.calculateDiscountedMoney(payingTable);
 
-		OutputView.printTotalMoney();
+		OutputView.printCurrentPayingTable(payingTable);
+		OutputView.askPaymentType();
+		PaymentType paymentType = PaymentType.of(InputView.inputInteger());
+		discountedMoney = paymentType.calculateDiscountedMoney(discountedMoney);
+
+		OutputView.printTotalMoney(discountedMoney);
 		payingTable.clear();
 	}
 

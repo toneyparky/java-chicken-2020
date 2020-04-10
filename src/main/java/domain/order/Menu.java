@@ -17,6 +17,10 @@ public class Menu {
 		return this.number == number;
 	}
 
+	public boolean isSameCategory(Category category) {
+		return this.category.equals(category);
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -29,4 +33,5 @@ public class Menu {
 	public String toString() {
 		return category + " " + number + " - " + name + " : " + price + "원";
 	}
+
 }

@@ -1,5 +1,6 @@
 package domain.table;
 
+import domain.order.Category;
 import domain.order.Order;
 import domain.order.Orders;
 
@@ -19,8 +20,20 @@ public class Table {
 		orders = new Orders();
 	}
 
+	public int countMenusBy(Category category) {
+		return orders.countMenusBy(category);
+	}
+
 	public boolean isOrdered() {
 		return orders.isOrdered();
+	}
+
+	public double calculateTotalPrice() {
+		return orders.calculateTotalPrice();
+	}
+
+	public int getNumber() {
+		return number;
 	}
 
 	public Orders getOrders() {

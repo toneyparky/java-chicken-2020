@@ -27,6 +27,19 @@ public class Orders {
 		targetOrder.addOrder(inputOrder);
 	}
 
+	public int countMenusBy(Category category) {
+		return orders.stream()
+				.filter(order -> order.isSameCategory(category))
+				.mapToInt(order -> order.getAmount().getAmount()) // TODO: 2020/04/10 겟 제거
+				.sum();
+	}
+
+	public double calculateTotalPrice() {
+		return orders.stream()
+				.mapToDouble(order -> order.calculatePrice())
+				.sum();
+	}
+
 	public boolean isOrdered() {
 		return !orders.isEmpty();
 	}

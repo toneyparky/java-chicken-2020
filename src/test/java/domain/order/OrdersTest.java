@@ -46,4 +46,18 @@ class OrdersTest {
 
 		assertEquals(actual.getOrders().get(0).getAmount().getAmount(), 20);
 	}
+
+	@DisplayName("countMenusBy 치킨 입력시 해당 카테고리의 주문 수량 반환")
+	@Test
+	void countMenusBy_Count_chicken_menues() {
+		Orders actual = new Orders(orders);
+		assertEquals(actual.countMenusBy(Category.CHICKEN), 20);
+	}
+
+	@DisplayName("calculateTotalPrice 주문들의 총 가격 반환")
+	@Test
+	void calculateTotalPrice_calculate_total_price() {
+		Orders actual = new Orders(orders);
+		assertEquals(actual.calculateTotalPrice(), 320_000);
+	}
 }

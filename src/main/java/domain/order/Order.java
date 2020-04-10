@@ -15,8 +15,16 @@ public class Order {
 		this.amount.add(inputOrder.amount);
 	}
 
+	public boolean isSameCategory(Category category) {
+		return menu.isSameCategory(category);
+	}
+
 	public Amount getAmount() {
 		return amount;
+	}
+
+	public double calculatePrice() {
+		return menu.getPrice() * amount.getAmount();
 	}
 
 	@Override
