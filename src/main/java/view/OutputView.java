@@ -15,6 +15,7 @@ public class OutputView {
 
 	public static void askOrderTable() {
 		System.out.println("## 주문할 테이블을 선택하세요.");
+		System.out.println();
 	}
 
 	public static void printTables(final List<Table> tables) {
@@ -23,12 +24,14 @@ public class OutputView {
 		printTopLine(size);
 		printTableNumbers(tables);
 		printBottomLine(tables);
+		System.out.println();
 	}
 
 	public static void printMenus(final List<Menu> menus) {
 		for (final Menu menu : menus) {
 			System.out.println(menu);
 		}
+		System.out.println();
 	}
 
 	private static void printTopLine(final int count) {
@@ -61,6 +64,7 @@ public class OutputView {
 
 	public static void printException(String message) {
 		System.out.println(message);
+		System.out.println();
 	}
 
 	public static void askOrderMenu() {
@@ -78,18 +82,22 @@ public class OutputView {
 				"2 - 결제하기",
 				"3 - 프로그램 종료");
 		System.out.println(message);
+		System.out.println();
 	}
 
 	public static void askOperation() {
 		System.out.println("## 원하는 기능을 선택하세요.");
+		System.out.println();
 	}
 
 	public static void printNoOrderedTables() {
 		System.out.println("주문된 테이블이 없어 실행할 수 없는 기능입니다.");
+		System.out.println();
 	}
 
 	public static void printNotOrderedTable() {
 		System.out.println("주문되지 않은 테이블입니다. 다시 입력해주세요.");
+		System.out.println();
 	}
 
 	public static void printExitMessage() {
@@ -102,14 +110,17 @@ public class OutputView {
 		for (Order order : orders.getOrders()) {
 			System.out.println(order);
 		}
+		System.out.println();
 	}
 
 	public static void printTotalMoney(double totalMoney) {
 		System.out.println(String.format("최종 금액은 %.0f원입니다.", totalMoney));
+		System.out.println();
 	}
 
 	public static void printCurrentPayingTable(Table payingTable) {
 		System.out.println(String.format("## %d번 테이블의 결제를 진행합니다.", payingTable.getNumber()));
+		System.out.println();
 	}
 
 	public static void askPaymentType() {
