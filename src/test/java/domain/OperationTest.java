@@ -22,4 +22,22 @@ class OperationTest {
 			Operation.of(4);
 		}).withMessage("해당되는 번호의 operation이 없습니다.");
 	}
+
+	@DisplayName("isOrder ORDER일시 true 반환")
+	@Test
+	void isOrder_When_same_return_True() {
+		assertTrue(Operation.ORDER.isOrder());
+	}
+
+	@DisplayName("isPay PAY일시 true 반환")
+	@Test
+	void isPay_When_same_return_True() {
+		assertTrue(Operation.PAY.isPay());
+	}
+
+	@DisplayName("isExit EXIT일시 true 반환")
+	@Test
+	void isExit_When_same_return_True() {
+		assertTrue(Operation.EXIT.isExit());
+	}
 }
