@@ -29,4 +29,8 @@ public class Table {
 		Table table = (Table) o;
 		return number == table.number;
 	}
+
+	public boolean isOrdered() {
+		return orders.isOrdered();
+	}
 }

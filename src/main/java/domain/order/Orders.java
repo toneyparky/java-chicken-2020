@@ -27,6 +27,10 @@ public class Orders {
 		targetOrder.addOrder(inputOrder);
 	}
 
+	public boolean isOrdered() {
+		return !orders.isEmpty();
+	}
+
 	public List<Order> getOrders() {
 		return orders;
 	}
