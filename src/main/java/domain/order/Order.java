@@ -1,4 +1,4 @@
-package domain;
+package domain.order;
 
 public class Order {
 	private final Menu menu;

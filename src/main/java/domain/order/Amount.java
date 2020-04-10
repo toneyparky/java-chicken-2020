@@ -1,4 +1,4 @@
-package domain;
+package domain.order;
 
 public class Amount {
 	private int amount;
