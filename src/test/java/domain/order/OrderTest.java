@@ -1,8 +1,5 @@
 package domain.order;
 
-import domain.order.Amount;
-import domain.order.MenuRepository;
-import domain.order.Order;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
