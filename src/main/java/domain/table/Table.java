@@ -15,6 +15,14 @@ public class Table {
 		orders.addOrder(inputOrder);
 	}
 
+	public void clear() {
+		orders = new Orders();
+	}
+
+	public boolean isOrdered() {
+		return orders.isOrdered();
+	}
+
 	public Orders getOrders() {
 		return orders;
 	}
@@ -28,9 +36,5 @@ public class Table {
 	public boolean equals(Object o) {
 		Table table = (Table) o;
 		return number == table.number;
-	}
-
-	public boolean isOrdered() {
-		return orders.isOrdered();
 	}
 }

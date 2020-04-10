@@ -1,6 +1,8 @@
 package view;
 
 import domain.order.Menu;
+import domain.order.Order;
+import domain.order.Orders;
 import domain.table.Table;
 
 import java.util.List;
@@ -82,7 +84,27 @@ public class OutputView {
 		System.out.println("## 원하는 기능을 선택하세요.");
 	}
 
+	public static void printNoOrderedTables() {
+		System.out.println("주문된 테이블이 없어 실행할 수 없는 기능입니다.");
+	}
+
+	public static void printNotOrderedTable() {
+		System.out.println("주문되지 않은 테이블입니다. 다시 입력해주세요.");
+	}
+
 	public static void printExitMessage() {
 		System.out.println("Pos기를 종료합니다.");
+	}
+
+	public static void printPayingOrders(Orders orders) {
+		System.out.println("## 주문내역");
+		System.out.println("메뉴  수량  금액");
+		for (Order order : orders.getOrders()) {
+			System.out.println(order);
+		}
+	}
+
+	public static void printTotalMoney() {
+		System.out.println("최종 금액은 000원입니다.");
 	}
 }

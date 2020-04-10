@@ -26,6 +26,8 @@ public class PosController {
 		}
 
 		if (operation.isPay()) {
+			PayController payController = new PayController();
+			payController.operate(tables);
 			operate();
 		}
 

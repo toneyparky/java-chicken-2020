@@ -23,4 +23,22 @@ public class Tables {
 
 		orderingTable.order(order);
 	}
+
+	public boolean isOrdered(Table orderingTable) {
+		Table OrderedTable = getSameTableWith(orderingTable);
+
+		return OrderedTable.isOrdered();
+	}
+
+	public boolean isAllEmpty() {
+		return tables.stream()
+				.noneMatch(Table::isOrdered);
+	}
+
+	public Table getSameTableWith(Table payingTable) {
+		return tables.stream()
+				.filter(table -> table.equals(payingTable))
+				.findFirst()
+				.orElseThrow(() -> new IllegalArgumentException("테이블을 찾을 수 없습니다."));
+	}
 }

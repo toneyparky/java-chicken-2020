@@ -26,4 +26,13 @@ public class Order {
 		Order order = (Order) o;
 		return Objects.equals(menu, order.menu);
 	}
+
+	@Override
+	public String toString() {
+		return String.join(" ",
+				menu.getName(),
+				amount.toString(),
+				String.valueOf(menu.getPrice())
+		);
+	}
 }
