@@ -13,4 +13,18 @@ public class Amount {
 			throw new IllegalArgumentException("총 주문량은 1-99 사이여야합니다.");
 		}
 	}
+
+	public void add(Amount inputAmount) {
+		validate(this.amount + inputAmount.amount);
+		this.amount = this.amount + inputAmount.amount;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	@Override
+	public String toString() {
+		return String.valueOf(amount);
+	}
 }

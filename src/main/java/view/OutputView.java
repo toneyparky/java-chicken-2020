@@ -10,6 +10,10 @@ public class OutputView {
 	private static final String TABLE_FORMAT = "| %s |";
 	private static final String BOTTOM_LINE = "└ ─ ┘";
 
+	public static void askOrderTable() {
+		System.out.println("## 주문할 테이블을 선택하세요.");
+	}
+
 	public static void printTables(final List<Table> tables) {
 		System.out.println("## 테이블 목록");
 		final int size = tables.size();
@@ -36,5 +40,17 @@ public class OutputView {
 			System.out.printf(TABLE_FORMAT, table);
 		}
 		System.out.println();
+	}
+
+	public static void printException(String message) {
+		System.out.println(message);
+	}
+
+	public static void askOrderMenu() {
+		System.out.println("## 등록할 메뉴를 선택하세요.");
+	}
+
+	public static void askOrderAmount() {
+		System.out.println("## 메뉴의 수량을 입력하세요.");
 	}
 }
